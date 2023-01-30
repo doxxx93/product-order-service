@@ -38,7 +38,7 @@ class ProductServiceTest {
         }
 
         public void addProduct(final AddProductRequest request) {
-            final Product product = new Product(request.name, request.price, request.discountPolicy);
+            final Product product = new Product(request.name(), request.price(), request.discountPolicy());
             productPort.save(product);
         }
     }
