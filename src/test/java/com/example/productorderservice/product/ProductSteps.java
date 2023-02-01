@@ -15,10 +15,17 @@ public class ProductSteps {
                 .then().log().all().extract();
     }
 
-    public static AddProductRequest getAddProductRequest() {
+    public static AddProductRequest newAddProductRequest() {
         final String name = "상품명";
         final int price = 1000;
         final DiscountPolicy discountPolicy = DiscountPolicy.NONE;
         return new AddProductRequest(name, price, discountPolicy);
+    }
+
+    static ExtractableResponse<Response> getProductRequest(final Long productId) {
+        return RestAssured.given().log().all()
+                .when().get("/products/{productId}", productId)
+                .then().log().all()
+                .extract();
     }
 }
