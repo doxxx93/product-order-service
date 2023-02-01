@@ -6,7 +6,7 @@ import io.restassured.response.Response;
 import org.springframework.http.MediaType;
 
 public class OrderSteps {
-    static ExtractableResponse<Response> createOrderRequest(final CreateOrderRequest request) {
+    public static ExtractableResponse<Response> createOrderRequest(final CreateOrderRequest request) {
         return RestAssured.given().log().all()
                 .contentType(MediaType.APPLICATION_JSON_VALUE)
                 .body(request)
