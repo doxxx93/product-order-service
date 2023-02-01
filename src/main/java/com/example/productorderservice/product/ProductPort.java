@@ -7,4 +7,6 @@ interface ProductPort {
      * @param product 상품
      */
     void save(final Product product);
+
+    Product getProduct(Long productId);
 }
