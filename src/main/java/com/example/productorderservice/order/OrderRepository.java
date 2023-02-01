@@ -1,17 +1,6 @@
 package com.example.productorderservice.order;
 
-import java.util.HashMap;
-import java.util.Map;
-import org.springframework.stereotype.Repository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-@Repository
-class OrderRepository {
-
-    private final Map<Long, Order> persistence = new HashMap<>();
-    private Long sequence = 0L;
-
-    public void save(final Order order) {
-        order.assignId(++sequence);
-        persistence.put(order.getId(), order);
-    }
+interface OrderRepository extends JpaRepository<Order, Long> {
 }
