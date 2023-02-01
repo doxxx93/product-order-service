@@ -14,7 +14,7 @@ public class OrderSteps {
                 .then().log().all().extract();
     }
 
-    static CreateOrderRequest newCreateOrderRequest() {
+    public static CreateOrderRequest newCreateOrderRequest() {
         final Long productId = 1L;
         final int quantity = 2;
         return new CreateOrderRequest(productId, quantity);
